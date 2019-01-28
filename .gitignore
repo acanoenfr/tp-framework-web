@@ -4,6 +4,11 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 .vs/
+PracticeCSharp.sln
+PracticeCSharp/PracticeCSharp.csproj
+PracticeCSharp/PracticeCSharp.csproj.user
+UnitTests/UnitTests.csproj
+UnitTests/UnitTests.csproj.user
 
 # User-specific files
 *.suo
