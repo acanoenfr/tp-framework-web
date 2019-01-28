@@ -6,7 +6,7 @@ using System.Linq;
 namespace CS.Tests
 {
     [TestClass]
-    class Intermediate
+    public class Intermediate
     {
         [TestMethod]
         [Description("Write a program to print the first n natural number using recursion.")]
