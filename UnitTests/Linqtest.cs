@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CS.Tests
+namespace UnitTests
 {
     /// <summary>
     /// Description résumée pour Linq
