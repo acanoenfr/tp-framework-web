@@ -4,4 +4,28 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="obj\Debug\netstandard2.0\PracticeCSharp.AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\netstandard2.0\PracticeCSharp.deps.json" />
+    <Content Include="obj\Debug\netstandard2.0\PracticeCSharp.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\project.assets.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\netstandard2.0\PracticeCSharp.dll" />
+    <None Include="bin\Debug\netstandard2.0\PracticeCSharp.pdb" />
+    <None Include="obj\Debug\netstandard2.0\PracticeCSharp.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\netstandard2.0\PracticeCSharp.assets.cache" />
+    <None Include="obj\Debug\netstandard2.0\PracticeCSharp.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\netstandard2.0\PracticeCSharp.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\netstandard2.0\PracticeCSharp.dll" />
+    <None Include="obj\Debug\netstandard2.0\PracticeCSharp.pdb" />
+    <None Include="obj\PracticeCSharp.csproj.nuget.cache" />
+    <None Include="obj\PracticeCSharp.csproj.nuget.g.props" />
+    <None Include="obj\PracticeCSharp.csproj.nuget.g.targets" />
+  </ItemGroup>
+
 </Project>

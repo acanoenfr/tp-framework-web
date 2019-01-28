@@ -1,9 +1,9 @@
-﻿using PracticeCSharp;
+﻿using PracticeCSharp.Intermediate;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CS.Tests
+namespace UnitTests
 {
     [TestClass]
     public class Intermediate
