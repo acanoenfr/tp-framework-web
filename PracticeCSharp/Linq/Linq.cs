@@ -20,12 +20,7 @@ namespace PracticeCSharp.Linq
         }
 
         public IEnumerable<int> GetGreaterNumbers(int limit, IEnumerable<int> numbers)
-        {
-			foreach(var lstnum in numbers)
-			{
-				Console.WriteLine(lstnum + " ");
-			}
-			
+        {			
 			return numbers.Where(y => y > 80 ? true : false);
 		}
 
@@ -37,10 +32,10 @@ namespace PracticeCSharp.Linq
 
         public IDictionary<string, int> GetFileCountByExtension(IEnumerable<string> files)
         {
-			var FileGrp = files.Select(file => Path.GetExtension(file).TrimStart('.').Tolower()).Groupby(z => z, (fExt, extCtr) => new
+			var FileGrp = files.Select(file => Path.GetExtension(file).TrimStart('.').ToLower()).GroupBy(z => z, (fExt, extCtr) => new
 			{
 				Extension = fExt,
-				Count = extCtr.count()
+				Count = extCtr.Count()
 			});
 			return FileGrp;
 
