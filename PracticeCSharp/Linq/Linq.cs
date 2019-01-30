@@ -10,13 +10,7 @@ namespace PracticeCSharp.Linq
     {
         public IEnumerable<string> FindStringsWhichStartsAndEndsWithSpecificCharacter(string startCharacter, string endCharacter, IEnumerable<string> strings)
         {
-			
-			
-			//item cest mon objet
 			 return strings.Where(item => item.StartsWith(startCharacter) && item.EndsWith(endCharacter));
-
-			
-
         }
 
         public IEnumerable<int> GetGreaterNumbers(int limit, IEnumerable<int> numbers)
@@ -26,8 +20,10 @@ namespace PracticeCSharp.Linq
 
         public IEnumerable<int> GetTopNRecords(int limit, IEnumerable<int> numbers)
         {
-			throw new NotImplementedException();
-
+			List<int> list = numbers.ToList();
+			list.Sort();
+			list.Reverse();
+			return list.Where(n => n >= list[limit-1]);
 		}
 
         public IDictionary<string, int> GetFileCountByExtension(IEnumerable<string> files)
@@ -38,8 +34,6 @@ namespace PracticeCSharp.Linq
 				Count = extCtr.Count()
 			});
 			return FileGrp;
-
-
         }
 
         public IEnumerable<Tuple<string, string, int, double>> GetFinalReceipe(List<Item> items, List<Client> clients, List<Purchase> purchases)
