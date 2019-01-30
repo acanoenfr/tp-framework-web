@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio Express 15 for Windows Desktop
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticeCSharp", "PracticeCSharp\PracticeCSharp.csproj", "{7AA93AE7-F1A7-44BA-BF2C-C8CA0BC25DBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeCSharp", "PracticeCSharp\PracticeCSharp.csproj", "{7AA93AE7-F1A7-44BA-BF2C-C8CA0BC25DBA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{BAE1686F-E25F-4763-8292-0A8322A8C937}"
 EndProject

@@ -1,19 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="obj\Debug\netstandard2.0\PracticeCSharp.AssemblyInfo.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="bin\Debug\netstandard2.0\PracticeCSharp.deps.json" />
     <Content Include="obj\Debug\netstandard2.0\PracticeCSharp.csproj.FileListAbsolute.txt" />
     <Content Include="obj\project.assets.json" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="bin\Debug\netstandard2.0\PracticeCSharp.dll" />
     <None Include="bin\Debug\netstandard2.0\PracticeCSharp.pdb" />
@@ -27,5 +28,4 @@
     <None Include="obj\PracticeCSharp.csproj.nuget.g.props" />
     <None Include="obj\PracticeCSharp.csproj.nuget.g.targets" />
   </ItemGroup>
-
 </Project>

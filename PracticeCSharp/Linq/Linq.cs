@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -20,17 +21,30 @@ namespace PracticeCSharp.Linq
 
         public IEnumerable<int> GetGreaterNumbers(int limit, IEnumerable<int> numbers)
         {
-            throw new NotImplementedException();
-        }
+			foreach(var lstnum in numbers)
+			{
+				Console.WriteLine(lstnum + " ");
+			}
+			
+			return numbers.Where(y => y > 80 ? true : false);
+		}
 
         public IEnumerable<int> GetTopNRecords(int limit, IEnumerable<int> numbers)
         {
-            throw new NotImplementedException();
-        }
+			throw new NotImplementedException();
+
+		}
 
         public IDictionary<string, int> GetFileCountByExtension(IEnumerable<string> files)
         {
-            throw new NotImplementedException();
+			var FileGrp = files.Select(file => Path.GetExtension(file).TrimStart('.').Tolower()).Groupby(z => z, (fExt, extCtr) => new
+			{
+				Extension = fExt,
+				Count = extCtr.count()
+			});
+			return FileGrp;
+
+
         }
 
         public IEnumerable<Tuple<string, string, int, double>> GetFinalReceipe(List<Item> items, List<Client> clients, List<Purchase> purchases)
