@@ -10,13 +10,7 @@ namespace PracticeCSharp.Linq
     {
         public IEnumerable<string> FindStringsWhichStartsAndEndsWithSpecificCharacter(string startCharacter, string endCharacter, IEnumerable<string> strings)
         {
-			
-			
-			//item cest mon objet
 			 return strings.Where(item => item.StartsWith(startCharacter) && item.EndsWith(endCharacter));
-
-			
-
         }
 
         public IEnumerable<int> GetGreaterNumbers(int limit, IEnumerable<int> numbers)
