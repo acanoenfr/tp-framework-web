@@ -23,9 +23,12 @@ namespace PracticeCSharp.Linq
 
         public IEnumerable<int> GetTopNRecords(int limit, IEnumerable<int> numbers)
         {
-			throw new NotImplementedException();
+            List<int> list = numbers.ToList();
+            list.Sort();
+            list.Reverse();
+            return list.Where(n => n >= list[limit - 1]);
 
-		}
+        }
 
         public IDictionary<string, int> GetFileCountByExtension(IEnumerable<string> files)
         {
