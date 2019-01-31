@@ -14,7 +14,10 @@ namespace PracticeCSharp.Linq
         }
 
         public IEnumerable<int> GetGreaterNumbers(int limit, IEnumerable<int> numbers)
-        {			
+        {
+			
+			
+        			
 			return numbers.Where(y => y > 80 ? true : false);
 		}
 
@@ -26,15 +29,31 @@ namespace PracticeCSharp.Linq
 
         public IDictionary<string, int> GetFileCountByExtension(IEnumerable<string> files)
         {
-            /*var FileGrp = files.Select(file => Path.GetExtension(file).TrimStart('.').ToLower()).GroupBy(z => z, (fExt, extCtr) => new
+			/*var FileGrp = files.Select(file => Path.GetExtension(file).TrimStart('.').ToLower()).GroupBy(z => z, (fExt, extCtr) => new
 			{
 				Extension = fExt,
 				Count = extCtr.Count()
 			});
-			return FileGrp;*/
-            // throw new NotImplementedException();
+			foreach(var num in FileGrp)
+			{
 
-            IDictionary<string, int> ext = new Dictionary<string, int>();
+				Console.WriteLine(num);
+			}*/
+			var dict = new Dictionary<string, int>();
+			var egrp = files.Select(file => Path.GetExtension(file).TrimStart('.').ToLower())
+					 .GroupBy(x => x, (ext, extCnt) => new
+					 {
+						 Extension = ext,
+						 Count = extCnt.Count()
+					 });
+
+			foreach (var v in egrp)
+			{
+				dict.Add(v.Extension, v.Count);
+			}
+			return dict;
+
+            /*IDictionary<string, int> ext = new Dictionary<string, int>();
             foreach (string file in files)
             {
                 int posPoint = file.IndexOf(".");
@@ -42,7 +61,7 @@ namespace PracticeCSharp.Linq
                 ext.Add(extension, 0);
             }
             // compter le nombres d'occurences dans le tableau
-            return ext;
+            return ext;*/
         }
 
         public IEnumerable<Tuple<string, string, int, double>> GetFinalReceipe(List<Item> items, List<Client> clients, List<Purchase> purchases)
