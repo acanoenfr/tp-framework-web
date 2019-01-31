@@ -20,25 +20,29 @@ namespace PracticeCSharp.Linq
 
         public IEnumerable<int> GetTopNRecords(int limit, IEnumerable<int> numbers)
         {
-            List<int> list = numbers.ToList();
-            list.Sort();
-            list.Reverse();
-            return list.Where(n => n >= list[limit-1]);
+			throw new NotImplementedException();
 
 		}
 
         public IDictionary<string, int> GetFileCountByExtension(IEnumerable<string> files)
         {
-            var expectedList = new Dictionary<string, int>
+            /*var FileGrp = files.Select(file => Path.GetExtension(file).TrimStart('.').ToLower()).GroupBy(z => z, (fExt, extCtr) => new
+			{
+				Extension = fExt,
+				Count = extCtr.Count()
+			});
+			return FileGrp;*/
+            // throw new NotImplementedException();
+
+            IDictionary<string, int> ext = new Dictionary<string, int>();
+            foreach (string file in files)
             {
-                { "frx", 1 },
-                { "txt", 3 },
-                { "dbf", 1},
-                { "pdf", 2},
-                { "frt", 1},
-                { "xml", 1}
-            };
-            return expectedList;
+                int posPoint = file.IndexOf(".");
+                string extension = file.Substring(posPoint, file.Length);
+                ext.Add(extension, 0);
+            }
+            // compter le nombres d'occurences dans le tableau
+            return ext;
         }
 
         public IEnumerable<Tuple<string, string, int, double>> GetFinalReceipe(List<Item> items, List<Client> clients, List<Purchase> purchases)
