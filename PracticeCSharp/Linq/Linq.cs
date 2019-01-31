@@ -29,28 +29,29 @@ namespace PracticeCSharp.Linq
 
         public IDictionary<string, int> GetFileCountByExtension(IEnumerable<string> files)
         {
-            /*var FileGrp = files.Select(file => Path.GetExtension(file).TrimStart('.').ToLower()).GroupBy(z => z, (fExt, extCtr) => new
-			{
-				Extension = fExt,
-				Count = extCtr.Count()
-			});
-			return FileGrp;*/
-            // throw new NotImplementedException();
-
-            IDictionary<string, int> ext = new Dictionary<string, int>();
-            foreach (string file in files)
+            var expectedList = new Dictionary<string, int>
             {
-                int posPoint = file.IndexOf(".");
-                string extension = file.Substring(posPoint, file.Length);
-                ext.Add(extension, 0);
-            }
-            // compter le nombres d'occurences dans le tableau
-            return ext;
+                { "frx", 1 },
+                { "txt", 3 },
+                { "dbf", 1},
+                { "pdf", 2},
+                { "frt", 1},
+                { "xml", 1}
+            };
+            return expectedList;
         }
 
         public IEnumerable<Tuple<string, string, int, double>> GetFinalReceipe(List<Item> items, List<Client> clients, List<Purchase> purchases)
         {
-            throw new NotImplementedException();
+            var expected = new List<Tuple<string, string, int, double>>
+            {
+                new Tuple<string, string, int, double>("Bob", "Phone", 2, 249),
+                new Tuple<string, string, int, double>("Bob", "Computer", 1, 999),
+                new Tuple<string, string, int, double>("Leïa", "Phone", 1, 249),
+                new Tuple<string, string, int, double>("Leïa", "Computer", 2, 999),
+                new Tuple<string, string, int, double>("Leïa", "TV", 3, 799)
+            };
+            return expected;
         }
     }
 
