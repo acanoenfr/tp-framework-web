@@ -56,29 +56,31 @@ namespace PracticeCSharp.Linq
 			}
 			return dict;
 
-            /*IDictionary<string, int> ext = new Dictionary<string, int>();
-            foreach (string file in files)
-            {
-                int posPoint = file.IndexOf(".");
-                string extension = file.Substring(posPoint, file.Length);
-                ext.Add(extension, 0);
-            }
-            // compter le nombres d'occurences dans le tableau
-            return ext;*/
+           
         }
 
         public IEnumerable<Tuple<string, string, int, double>> GetFinalReceipe(List<Item> items, List<Client> clients, List<Purchase> purchases)
         {
-            var expected = new List<Tuple<string, string, int, double>>
-            {
-                new Tuple<string, string, int, double>("Bob", "Phone", 2, 249),
-                new Tuple<string, string, int, double>("Bob", "Computer", 1, 999),
-                new Tuple<string, string, int, double>("Leïa", "Phone", 1, 249),
-                new Tuple<string, string, int, double>("Leïa", "Computer", 2, 999),
-                new Tuple<string, string, int, double>("Leïa", "TV", 3, 799)
-            };
-            return expected;
-        }
+			//
+			List<Tuple<string, string, int, double>> resultat = new List<Tuple<string, string, int, double>>();
+			foreach(Purchase achats in purchases)
+			{
+				List<Client> cli = clients.Where(m => m.Id == achats.ClientId).ToList();
+				List<Item> product = items.Where(m => m.Id == achats.ItemId).ToList();
+
+				string cliNom = cli[0].Name;
+				string productName = product[0].Label;
+				int quantite = achats.Quantity;
+				double price = product[0].Price;
+
+
+				Tuple<string, string, int, double> commande = Tuple.Create(cliNom, productName, quantite, price);
+				resultat.Add(commande); 
+			}
+			IEnumerable<Tuple<string, string, int, double>> myresult = resultat;
+			return myresult;
+
+		}
     }
 
     public class Item
